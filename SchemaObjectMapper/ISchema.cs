@@ -4,8 +4,8 @@ using System;
 
 namespace SchemaObjectMapper
 {
-    public interface ISchema<T>
+    public interface ISchema
     {
-        List<BaseMapping<T>> Mappings { get; }
+        List<BaseMapping> Mappings { get; }
     }
 }

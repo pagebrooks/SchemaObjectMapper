@@ -50,6 +50,7 @@
     <Compile Include="DelimitedMapping.cs" />
     <Compile Include="DelimitedSchema.cs" />
     <Compile Include="DelimitedSchemaObjectMapper.cs" />
+    <Compile Include="FileReader.cs" />
     <Compile Include="FixedWidthMapping.cs" />
     <Compile Include="FixedWidthSchema.cs" />
     <Compile Include="FixedWidthSchemaObjectMapper.cs" />

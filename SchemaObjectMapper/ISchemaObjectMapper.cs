@@ -4,8 +4,7 @@ using System;
 
 namespace SchemaObjectMapper
 {
-    public interface ISchemaObjectMapper<T>
-        where T : new()
+    public interface ISchemaObjectMapper<out T> where T : new()
     {
         T MapLine(string line);
     }

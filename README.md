@@ -30,10 +30,10 @@ Assert.AreEqual(DateTime.Parse("01/02/2003"), person.DateOfBirth);
 ```c#
 // Create schema
 var personSchema = new FixedWidthSchema<Person>();
-personSchema.AddMapping(p => p.FirstName, 0, 10);
-personSchema.AddMapping(p => p.LastName, 10, 10);
-personSchema.AddMapping(p => p.Gender, 24, 1);
-personSchema.AddMapping(p => p.DateOfBirth, 25, 10);
+personSchema.AddMapping(p => p.FirstName, 0, 10, trim: true);
+personSchema.AddMapping(p => p.LastName, 10, 10, trim: true);
+personSchema.AddMapping(p => p.Gender, 24, 1, trim: true);
+personSchema.AddMapping(p => p.DateOfBirth, 25, 10, trim: true);
 
 // Create mapper
 var mapper = new FixedWidthSchemaObjectMapper<Person>(personSchema);

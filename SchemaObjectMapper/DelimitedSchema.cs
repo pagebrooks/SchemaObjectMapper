@@ -5,11 +5,11 @@ using System.Linq.Expressions;
 
 namespace SchemaObjectMapper
 {
-    public class DelimitedSchema<T> : ISchema<T>
+    public class DelimitedSchema<T> : ISchema
     {
         public DelimitedSchema()
         {
-            this.Mappings = new List<BaseMapping<T>>();
+            this.Mappings = new List<BaseMapping>();
         }
 
         public void AddMapping(Expression<Func<T, object>> expr, int ordinal)
@@ -17,6 +17,6 @@ namespace SchemaObjectMapper
             this.Mappings.Add(new DelimitedMapping<T>(expr, ordinal));
         }
 
-        public List<BaseMapping<T>> Mappings { get; private set; }
+        public List<BaseMapping> Mappings { get; private set; }
     }
 }

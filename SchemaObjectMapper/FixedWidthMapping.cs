@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace SchemaObjectMapper
 {
-    public class FixedWidthMapping<TSource> : BaseMapping<TSource>
+    public class FixedWidthMapping<TSource> : BaseMapping
     {
         public FixedWidthMapping(Expression<Func<TSource, object>> expr, int start, int length, bool trim)
         {

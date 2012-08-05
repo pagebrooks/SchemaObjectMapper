@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Charge.cs" />
+    <Compile Include="FileReaderFixture.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="SchemaObjectMapperFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

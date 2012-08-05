@@ -7,9 +7,9 @@ namespace SchemaObjectMapper
     public class DelimitedSchemaObjectMapper<T> : ISchemaObjectMapper<T> where T : new()
     {
         private readonly string[] _delimiter;
-        private readonly ISchema<T> _delimitedSchema;
+        private readonly ISchema _delimitedSchema;
 
-        public DelimitedSchemaObjectMapper(ISchema<T> delimitedSchema, params string[] delimiter)
+        public DelimitedSchemaObjectMapper(ISchema delimitedSchema, params string[] delimiter)
         {
             this._delimitedSchema = delimitedSchema;
             this._delimiter = delimiter;

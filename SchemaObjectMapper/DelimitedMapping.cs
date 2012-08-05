@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace SchemaObjectMapper
 {
-    public class DelimitedMapping<TSource> : BaseMapping<TSource>
+    public class DelimitedMapping<TSource> : BaseMapping
     {
         public DelimitedMapping(Expression<Func<TSource, object>> expr, int ordinal)
         {

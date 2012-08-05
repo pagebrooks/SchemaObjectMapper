@@ -5,11 +5,11 @@ using System.Linq.Expressions;
 
 namespace SchemaObjectMapper
 {
-    public class FixedWidthSchema<T> : ISchema<T>
+    public class FixedWidthSchema<T> : ISchema
     {
         public FixedWidthSchema()
         {
-            this.Mappings = new List<BaseMapping<T>>();
+            this.Mappings = new List<BaseMapping>();
         }
 
         public void AddMapping(Expression<Func<T, object>> expr, int startIndex, int length, bool trim = true)
@@ -17,6 +17,6 @@ namespace SchemaObjectMapper
             this.Mappings.Add(new FixedWidthMapping<T>(expr, startIndex, length, trim));
         }
 
-        public List<BaseMapping<T>> Mappings { get; private set; }
+        public List<BaseMapping> Mappings { get; private set; }
     }
 }

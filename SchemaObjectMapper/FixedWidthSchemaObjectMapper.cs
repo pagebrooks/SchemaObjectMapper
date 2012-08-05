@@ -6,9 +6,9 @@ namespace SchemaObjectMapper
 {
     public class FixedWidthSchemaObjectMapper<T> : ISchemaObjectMapper<T> where T : new()
     {
-        private readonly ISchema<T> _schema;
+        private readonly ISchema _schema;
 
-        public FixedWidthSchemaObjectMapper(ISchema<T> schema)
+        public FixedWidthSchemaObjectMapper(ISchema schema)
         {
             this._schema = schema;
         }
