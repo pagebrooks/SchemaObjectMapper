@@ -5,17 +5,17 @@ Easily map delimited and fixed-width strings to objects.
 ### Basic Usage (Delimited Lines)
 
 ```c#
-// Create Schema
+// Create schema
 var personSchema = new DelimitedSchema<Person>();
 personSchema.AddMapping(p => p.FirstName, 0);
 personSchema.AddMapping(p => p.LastName, 1);
 personSchema.AddMapping(p => p.Gender, 2);
 personSchema.AddMapping(p => p.DateOfBirth, 3);
 
-// Create Mapper
+// Create mapper
 var personMapper = new DelimitedSchemaObjectMapper<Person>(personSchema, "|");
 
-// Map Lines
+// Map line
 var person = personMapper.MapLine("Foo|Bar|M|01/02/2003");
 
 Assert.AreEqual("Foo", person.FirstName);
