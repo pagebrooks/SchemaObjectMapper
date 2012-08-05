@@ -1,9 +1,0 @@
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\bin\Debug\SchemaObjectMapper.Tests.dll
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\bin\Debug\SchemaObjectMapper.Tests.pdb
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\bin\Debug\nunit.framework.dll
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\bin\Debug\SchemaObjectMapper.pdb
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\bin\Debug\nunit.framework.xml
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\obj\Debug\ResolveAssemblyReference.cache
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\obj\Debug\SchemaObjectMapper.Tests.dll
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\obj\Debug\SchemaObjectMapper.Tests.pdb
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper.Tests\bin\Debug\SchemaObjectMapper.dll

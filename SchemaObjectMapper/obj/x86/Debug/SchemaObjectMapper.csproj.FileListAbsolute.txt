@@ -1,5 +1,0 @@
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper\bin\Debug\SchemaObjectMapper.pdb
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper\obj\x86\Debug\SchemaObjectMapper.pdb
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper\bin\Debug\SchemaObjectMapper.dll
-C:\Data\Tests\SchemaObjectMapper\SchemaObjectMapper\obj\x86\Debug\SchemaObjectMapper.dll
