@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 Easily map delimited and fixed-width strings to objects.
 
@@ -76,4 +76,4 @@ Licensed under the [MIT license](http://en.wikipedia.org/wiki/MIT_License).
 
 ## About
 
-Developed by - [@pagebrooks](https://github.com/pagebrooks).
+Developed by [@pagebrooks](https://github.com/pagebrooks).
