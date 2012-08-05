@@ -13,11 +13,11 @@ namespace SchemaObjectMapper.Tests
         public void DelimitedSchemaMapping_Properly_Maps_Delimited_Strings()
         {
             // Create Schema
-            var patientSchema = new DelimitedSchema<Person>();
-            patientSchema.AddMapping(p => p.FirstName, 0);
-            patientSchema.AddMapping(p => p.LastName, 1);
-            patientSchema.AddMapping(p => p.Gender, 2);
-            patientSchema.AddMapping(p => p.DateOfBirth, 3);
+            var personSchema = new DelimitedSchema<Person>();
+            personSchema.AddMapping(p => p.FirstName, 0);
+            personSchema.AddMapping(p => p.LastName, 1);
+            personSchema.AddMapping(p => p.Gender, 2);
+            personSchema.AddMapping(p => p.DateOfBirth, 3);
 
             var chargeSchema = new DelimitedSchema<Charge>();
             chargeSchema.AddMapping(c => c.Code, 0);
@@ -25,17 +25,17 @@ namespace SchemaObjectMapper.Tests
             chargeSchema.AddMapping(c => c.ChargeAmount, 2);
 
             // Create Mapper
-            var patientMapper = new DelimitedSchemaObjectMapper<Person>(patientSchema, "|");
+            var personMapper = new DelimitedSchemaObjectMapper<Person>(personSchema, "|");
             var chargeMapper = new DelimitedSchemaObjectMapper<Charge>(chargeSchema, "|");
 
-            // Map Lines
-            var patient = patientMapper.MapLine("Foo|Bar|M|01/02/2003");
+            // Map lines
+            var person = personMapper.MapLine("Foo|Bar|M|01/02/2003");
             var charge = chargeMapper.MapLine("12345|1|89.93");
 
-            Assert.AreEqual("Foo", patient.FirstName);
-            Assert.AreEqual("Bar", patient.LastName);
-            Assert.AreEqual("M", patient.Gender);
-            Assert.AreEqual(DateTime.Parse("01/02/2003"), patient.DateOfBirth);
+            Assert.AreEqual("Foo", person.FirstName);
+            Assert.AreEqual("Bar", person.LastName);
+            Assert.AreEqual("M", person.Gender);
+            Assert.AreEqual(DateTime.Parse("01/02/2003"), person.DateOfBirth);
 
             Assert.AreEqual("12345", charge.Code);
             Assert.AreEqual(1, charge.Units);
@@ -45,19 +45,23 @@ namespace SchemaObjectMapper.Tests
         [Test]
         public void FixedWidthSchemaMapping_Properly_Maps_Fixed_Width_Strings()
         {
-            var patientSchema = new FixedWidthSchema<Person>();
-            patientSchema.AddMapping(p => p.FirstName, 0, 10);
-            patientSchema.AddMapping(p => p.LastName, 10, 10);
-            patientSchema.AddMapping(p => p.Gender, 24, 1);
-            patientSchema.AddMapping(p => p.DateOfBirth, 25, 10);
+            // Create schema
+            var personSchema = new FixedWidthSchema<Person>();
+            personSchema.AddMapping(p => p.FirstName, 0, 10);
+            personSchema.AddMapping(p => p.LastName, 10, 10);
+            personSchema.AddMapping(p => p.Gender, 24, 1);
+            personSchema.AddMapping(p => p.DateOfBirth, 25, 10);
 
-            var mapper = new FixedWidthSchemaObjectMapper<Person>(patientSchema);
-            var patient = mapper.MapLine("Foo       Bar           M01/02/2003");
+            // Create mapper
+            var mapper = new FixedWidthSchemaObjectMapper<Person>(personSchema);
+            
+            // Map line
+            var person = mapper.MapLine("Foo       Bar           M01/02/2003");
 
-            Assert.AreEqual("Foo", patient.FirstName);
-            Assert.AreEqual("Bar", patient.LastName);
-            Assert.AreEqual("M", patient.Gender);
-            Assert.AreEqual(DateTime.Parse("01/02/2003"), patient.DateOfBirth);
+            Assert.AreEqual("Foo", person.FirstName);
+            Assert.AreEqual("Bar", person.LastName);
+            Assert.AreEqual("M", person.Gender);
+            Assert.AreEqual(DateTime.Parse("01/02/2003"), person.DateOfBirth);
         }
     }
 }
