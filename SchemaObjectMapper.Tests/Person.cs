@@ -4,7 +4,7 @@ using System;
 
 namespace SchemaObjectMapper.Tests
 {
-    public class Patient
+    public class Person
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

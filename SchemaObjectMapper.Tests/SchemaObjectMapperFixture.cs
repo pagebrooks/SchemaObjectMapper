@@ -13,7 +13,7 @@ namespace SchemaObjectMapper.Tests
         public void DelimitedSchemaMapping_Properly_Maps_Delimited_Strings()
         {
             // Create Schema
-            var patientSchema = new DelimitedSchema<Patient>();
+            var patientSchema = new DelimitedSchema<Person>();
             patientSchema.AddMapping(p => p.FirstName, 0);
             patientSchema.AddMapping(p => p.LastName, 1);
             patientSchema.AddMapping(p => p.Gender, 2);
@@ -25,7 +25,7 @@ namespace SchemaObjectMapper.Tests
             chargeSchema.AddMapping(c => c.ChargeAmount, 2);
 
             // Create Mapper
-            var patientMapper = new DelimitedSchemaObjectMapper<Patient>(patientSchema, "|");
+            var patientMapper = new DelimitedSchemaObjectMapper<Person>(patientSchema, "|");
             var chargeMapper = new DelimitedSchemaObjectMapper<Charge>(chargeSchema, "|");
 
             // Map Lines
@@ -45,13 +45,13 @@ namespace SchemaObjectMapper.Tests
         [Test]
         public void FixedWidthSchemaMapping_Properly_Maps_Fixed_Width_Strings()
         {
-            var patientSchema = new FixedWidthSchema<Patient>();
+            var patientSchema = new FixedWidthSchema<Person>();
             patientSchema.AddMapping(p => p.FirstName, 0, 10);
             patientSchema.AddMapping(p => p.LastName, 10, 10);
             patientSchema.AddMapping(p => p.Gender, 24, 1);
             patientSchema.AddMapping(p => p.DateOfBirth, 25, 10);
 
-            var mapper = new FixedWidthSchemaObjectMapper<Patient>(patientSchema);
+            var mapper = new FixedWidthSchemaObjectMapper<Person>(patientSchema);
             var patient = mapper.MapLine("Foo       Bar           M01/02/2003");
 
             Assert.AreEqual("Foo", patient.FirstName);
