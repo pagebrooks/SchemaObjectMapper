@@ -68,3 +68,12 @@ fr.ReadFile("test.txt", line =>
 	}
 });
 ```
+
+
+## License
+
+Licensed under the [MIT license](http://en.wikipedia.org/wiki/MIT_License).
+
+## About
+
+Developed by - [@pagebrooks](https://github.com/pagebrooks).
