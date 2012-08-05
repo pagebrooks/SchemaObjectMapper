@@ -46,3 +46,25 @@ Assert.AreEqual("Bar", person.LastName);
 Assert.AreEqual("M", person.Gender);
 Assert.AreEqual(DateTime.Parse("01/02/2003"), person.DateOfBirth);
 ```
+
+### Basic Usage (FileReader)
+
+```c#
+var schema = new DelimitedSchema<Person>();
+schema.AddMapping(s => s.FirstName, 1);
+schema.AddMapping(s => s.LastName, 2);
+schema.AddMapping(s => s.Gender, 3);
+schema.AddMapping(s => s.DateOfBirth, 4);
+
+var mapper = new DelimitedSchemaObjectMapper<Person>(schema, "|");
+var persons = new List<Person>();
+
+var fr = new FileReader();
+fr.ReadFile("test.txt", line =>
+{
+	if (line.StartsWith("P"))
+	{
+		persons.Add(mapper.MapLine(line));
+	}
+});
+```
